@@ -2,31 +2,31 @@ EMPLOYEES = [
     {
         "id": 1,
         "name": "Noah Husain",
-        "locationId": 1
+        "location_id": 1
     },
     {
         "id": 2,
         "name": "Payton Husain",
-        "locationId": 2
+        "location_id": 2
     },
     {
         "name": "Osama Husain",
-        "locationId": 1,
+        "location_id": 1,
         "id": 3
     },
     {
         "name": "Melody Husain",
-        "locationId": 1,
+        "location_id": 1,
         "id": 4
     },
     {
         "name": "Sara Husain",
-        "locationId": 2,
+        "location_id": 2,
         "id": 5
     },
     {
         "name": "Richard Bae",
-        "locationId": 1,
+        "location_id": 1,
         "id": 6
     }
 ]

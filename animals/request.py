@@ -3,48 +3,48 @@ ANIMALS = [
         "id": 1,
         "name": "Doodles",
         "species": "dog",
-        "customerId": 1,
-        "locationId": 2,
+        "customer_id": 1,
+        "location_id": 2,
         "status": "Admitted"
     },
     {
         "id": 2,
         "name": "Baylee",
         "species": "dog",
-        "customerId": 2,
-        "locationId": 1,
+        "customer_id": 2,
+        "location_id": 1,
         "status": "Admitted"
     },
     {
         "id": 3,
         "name": "Snoop",
         "species": "dog",
-        "customerId": 3,
-        "locationId": 2,
+        "customer_id": 3,
+        "location_id": 2,
         "status": "Admitted"
     },
     {
         "id": 4,
         "name": "Sky",
         "species": "bird",
-        "customerId": 4,
-        "locationId": 1,
+        "customer_id": 4,
+        "location_id": 1,
         "status": "Admitted"
     },
     {
         "id": 5,
         "name": "Porker",
         "species": "pig",
-        "customerId": 5,
-        "locationId": 2,
+        "customer_id": 5,
+        "location_id": 2,
         "status": "Admitted"
     },
     {
         "id": 6,
         "name": "Shadow",
         "species": "cat",
-        "customerId": 2,
-        "locationId": 1,
+        "customer_id": 2,
+        "location_id": 1,
         "status": "Admitted"
     }
 ]
