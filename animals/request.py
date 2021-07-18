@@ -116,15 +116,15 @@ def get_single_animal(id):
             a.customer_id
         FROM animal a
         WHERE a.id = ?
-        """, ( id, ))
+        """, (id, ))
 
         # Load the single result into memory
         data = db_cursor.fetchone()
 
         # Create an animal instance from the current row
         animal = Animal(data['id'], data['name'], data['breed'],
-                            data['status'], data['location_id'],
-                            data['customer_id'])
+                        data['status'], data['location_id'],
+                        data['customer_id'])
 
         return json.dumps(animal.__dict__)
 
@@ -146,22 +146,6 @@ def create_animal(animal):
     return animal
 
 
-def delete_animal(id):
-    # Initial -1 value for animal index, in case one isn't found
-    animal_index = -1
-
-    # Iterate the ANIMALS list, but use enumerate() so that you
-    # can access the index value of each item
-    for index, animal in enumerate(ANIMALS):
-        if animal["id"] == id:
-            # Found the animal. Store the current index.
-            animal_index = index
-
-    # If the animal was found, use pop(int) to remove it from list
-    if animal_index >= 0:
-        ANIMALS.pop(animal_index)
-
-
 def update_animal(id, new_animal):
     # Iterate the ANIMALS list, but use enumerate() so that
     # you can access the index value of each item.
@@ -170,6 +154,7 @@ def update_animal(id, new_animal):
             # Found the animal. Update the value.
             ANIMALS[index] = new_animal
             break
+
 
 def get_animal_by_location(location):
 
@@ -188,7 +173,7 @@ def get_animal_by_location(location):
             a.customer_id
         FROM animal a
         WHERE a.location_id = ?
-        """, ( location, ))
+        """, (location, ))
 
         animals = []
         dataset = db_cursor.fetchall()
@@ -200,6 +185,7 @@ def get_animal_by_location(location):
             animals.append(animal.__dict__)
 
     return json.dumps(animals)
+
 
 def get_animal_by_status(status):
 
@@ -218,7 +204,7 @@ def get_animal_by_status(status):
             a.customer_id
         FROM animal a
         WHERE a.status = ?
-        """, ( status, ))
+        """, (status, ))
 
         animals = []
         dataset = db_cursor.fetchall()
@@ -230,3 +216,13 @@ def get_animal_by_status(status):
             animals.append(animal.__dict__)
 
     return json.dumps(animals)
+
+
+def delete_animal(id):
+    with sqlite3.connect("./kennel.db") as conn:
+        db_cursor = conn.cursor()
+
+        db_cursor.execute("""
+        DELETE FROM animal
+        WHERE id = ?
+        """, (id, ))

@@ -75,8 +75,4 @@
 -- WHERE a.id = 3
 
 
-SELECT
-    e.id,
-    e.name,
-    e.location_id,
-FROM employee e
+INSERT INTO `Animal` VALUES (null, "Daps", "Kennel", "Boxer", 2, 2);
